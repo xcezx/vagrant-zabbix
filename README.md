@@ -1,4 +1,4 @@
-zabbix-agent
+zabbix-agent [![Build Status](https://travis-ci.org/xcezx/ansible-zabbix-agent.svg?branch=master)](https://travis-ci.org/xcezx/ansible-zabbix-agent)
 ========
 
 install and configutation zabbix-agent
