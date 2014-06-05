@@ -1,0 +1,30 @@
+zabbix_agent:
+  settings:
+    Alias: ~
+    AllowRoot: 0
+    BufferSend: 5
+    BufferSize: 100
+    DebugLevel: 3
+    EnableRemoteCommands: 0
+    HostMetadata: ~
+    HostMetadataItem: ~
+    Hostname: "Zabbix server"
+    HostnameItem: "system.hostname"
+    Include: "/etc/zabbix/zabbix_agentd.d/"
+    ListenIP: "0.0.0.0"
+    ListenPort: 10050
+    LoadModule: ~
+    LoadModulePath: "${libdir}/modules"
+    LogFile: "/var/run/zabbix/zabbix_agentd.log"
+    LogFileSize: 0
+    LogRemoteCommands: 0
+    MaxLinesPerSecond: 100
+    PidFile: "/var/run/zabbix/zabbix_agentd.pid"
+    RefreshActiveChecks: 120
+    Server: "127.0.0.1"
+    ServerActive: "127.0.0.1"
+    SourceIP: ~
+    StartAgents: 3
+    Timeout: 3
+    UnsafeUserParameters: 0
+    UserParameter: ~
