@@ -1,4 +1,4 @@
-zabbix-web
+zabbix-web [![Build Status](https://travis-ci.org/xcezx/ansible-zabbix-web.svg?branch=master)](https://travis-ci.org/xcezx/ansible-zabbix-web)
 ========
 
 install and configuration zabbix-web
