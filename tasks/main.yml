@@ -4,9 +4,7 @@
     state: present
     enablerepo: zabbix
   sudo: yes
-  with_items:
-    - zabbix-agent
-    - zabbix-sender
+  with_items: zabbix_agent_install_packages
 
 - name: configure zabbix_agent.conf
   template:

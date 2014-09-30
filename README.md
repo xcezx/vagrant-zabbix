@@ -6,6 +6,7 @@ install and configutation zabbix-agent
 Role Variables
 --------------
 
+- `zabbix_agent_install_packages`
 - `zabbix_agent.settings.Alias`
 - `zabbix_agent.settings.AllowRoot`
 - `zabbix_agent.settings.BufferSend`

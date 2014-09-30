@@ -1,3 +1,7 @@
+zabbix_agent_install_packages:
+  - zabbix-agent
+  - zabbix-sender
+
 zabbix_agent:
   settings:
     Alias: ~
