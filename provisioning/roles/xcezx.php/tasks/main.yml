@@ -1,0 +1,18 @@
+- name: install packages
+  sudo: yes
+  yum:
+    name: "{{ item.name }}"
+    enablerepo: "{{ item.enablerepo | default('') }}"
+    state: present
+  with_items:
+    - "{{ php_install_packages }}"
+    - "{{ php_additional_install_packages }}"
+
+- name: configure php.ini
+  sudo: yes
+  ini_file:
+    dest: /etc/php.d/local.ini
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  with_items: php_config
