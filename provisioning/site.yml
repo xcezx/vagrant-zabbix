@@ -1,0 +1,18 @@
+- hosts: all
+  roles:
+    - { role: goozbach.EPEL, sudo: yes }
+
+- hosts: server
+  roles:
+    - { role: xcezx.httpd, sudo: yes }
+    - { role: xcezx.php, sudo: yes }
+    - { role: xcezx.mysql, sudo: yes }
+    - { role: xcezx.zabbix-repository, sudo: yes }
+    - { role: xcezx.zabbix-server, sudo: yes }
+    - { role: xcezx.zabbix-agent, suod: yes }
+    - { role: xcezx.zabbix-web, sudo: yes }
+
+- hosts: agent
+  roles:
+    - { role: xcezx.zabbix-repository, sudo: yes }
+    - { role: xcezx.zabbix-agent, sudo: yes }
