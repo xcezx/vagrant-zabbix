@@ -67,3 +67,5 @@ mysql_config:
 
   - { section: "client", option: "port", value: "{{ mysql_port }}" }
   - { section: "client", option: "socket", value: "{{ mysql_basedir }}/mysqld.sock" }
+
+mysql_append_config: []
