@@ -1,0 +1,21 @@
+- name: install zabbix-agent packages
+  yum:
+    name: "{{ item }}"
+    state: present
+    enablerepo: zabbix
+  sudo: yes
+  with_items: zabbix_agent_install_packages
+
+- name: configure zabbix_agent.conf
+  template:
+    src: zabbix_agentd.conf.j2
+    dest: /etc/zabbix/zabbix_agentd.conf
+  sudo: yes
+  notify: restart zabbix-agent
+
+- name: ensure zabbix-agent service
+  service:
+    name: zabbix-agent
+    state: started
+    enabled: yes
+  sudo: yes
