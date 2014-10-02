@@ -33,33 +33,40 @@
 - name: create mysql directory
   sudo: yes
   file:
-    path: "{{ mysql_basedir }}"
+    path: "{{ item }}"
     state: directory
     owner: "{{ mysql_user }}"
     group: "{{ mysql_group }}"
     mode: 0755
+  with_items:
+    - "{{ mysql_basedir }}"
+    - "{{ mysql_datadir }}"
 
 - name: clone mysql-build
   sudo: yes
   git:
     repo: https://github.com/kamipo/mysql-build.git
-    dest: /usr/local/src/mysql-build
-    version: master
+    dest: "{{ mysql_build_checkout_dest }}"
+    version: "{{ mysql_build_version }}"
     accept_hostkey: yes
 
 - name: build mysql
   sudo: yes
-  command: /usr/local/src/mysql-build/bin/mysql-build {{ mysql_version }} {{ mysql_basedir }} {{ mysql_plugin }} --sudo
-           creates={{ mysql_basedir }}/README
+  command: |
+    {{ mysql_build_checkout_dest }}/bin/mysql-build {{ mysql_version }} {{ mysql_basedir }} {{ mysql_plugin }}
+    creates={{ mysql_basedir }}/README
 
-- name: fix permission
+- name: fix directory permission
   sudo: yes
   file:
-    path: "{{ mysql_basedir }}"
+    path: "{{ item }}"
     owner: "{{ mysql_user }}"
     group: "{{ mysql_group }}"
     recurse: yes
     state: directory
+  with_items:
+    - "{{ mysql_basedir }}"
+    - "{{ mysql_datadir }}"
 
 - name: link rc script
   sudo: yes
@@ -81,8 +88,9 @@
     option: "{{ item.option }}"
     section: "{{ item.section }}"
     value: "{{ item.value }}"
-  with_items: mysql_config
-  notify: restart mysqld
+  with_items:
+    - "{{ mysql_config }}"
+    - "{{ mysql_append_config }}"
 
 - name: ensure stopped service
   sudo: yes
@@ -93,9 +101,9 @@
 
 - name: run mysql_install_db
   sudo: yes
-  command: ./scripts/mysql_install_db --user={{ mysql_user }}
-           chdir={{ mysql_basedir }}
-           creates={{ mysql_basedir }}/my-new.cnf
+  command: |
+    {{ mysql_basedir }}/scripts/mysql_install_db --user={{ mysql_user }}
+    creates={{ mysql_basedir }}/my-new.cnf
 
 - name: ensure started service
   sudo: yes
