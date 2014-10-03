@@ -23,18 +23,17 @@ php_config:
   - { section: "local", option: "date.timezone", value: "Asia/Tokyo" }
 
 # for xcezx.mysql
-mysql_root_password: "xZ5g3MZD"
 mysql_append_config:
   - { section: "mysqld", option: "skip-character-set-client-handshake", value: "ON" }
   - { section: "mysql", option: "default-character-set", value: "utf8" }
 
 # for xcezx.zabbix-server
 zabbix_server_settings:
-  DBHost: "127.0.0.1"
+  DBHost: "10.0.0.10"
   DBName: "zabbix"
   DBPassword: "zabbix"
+  DBUser: "zabbix"
   DBPort: "3306"
-  DBSocket: "{{ mysql_basedir }}/mysqld.sock"
 
 # for xcezx.zabbix-agent
 zabbix_agent:
