@@ -11,8 +11,6 @@ mysql_datadir: "{{ mysql_basedir }}/data"
 mysql_port: 3306
 mysql_rc_script: mysqld
 
-mysql_root_password: "p4ssw0rd"
-
 mysql_config:
   - { section: "mysqld", option: "basedir", value: "{{ mysql_basedir }}" }
   - { section: "mysqld", option: "datadir", value: "{{ mysql_datadir }}" }

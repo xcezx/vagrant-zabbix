@@ -112,31 +112,3 @@
     name: "{{ mysql_rc_script }}"
     enabled: yes
     state: started
-
-- name: link /tmp/mysql.sock
-  file:
-    src: "{{ mysql_basedir }}/mysqld.sock"
-    dest: /tmp/mysql.sock
-    state: link
-
-- name: run mysql_secure_installation
-  sudo: yes
-  sudo_user: "{{ mysql_user }}"
-  shell: |
-    cat <<EOF | ./bin/mysql_secure_installation | tee {{ mysql_basedir }}/.mysql_secure_installation.log
-    
-    Y
-    {{ mysql_root_password }}
-    {{ mysql_root_password }}
-    Y
-    Y
-    Y
-    Y
-    EOF
-    chdir={{ mysql_basedir }}
-    creates={{ mysql_basedir }}/.mysql_secure_installation.log
-
-- name: unlink /tmp/mysql.sock
-  file:
-    path: /tmp/mysql.sock
-    state: absent
