@@ -10,3 +10,6 @@
 [submodule "provisioning/roles/xcezx.zabbix-repository"]
 	path = provisioning/roles/xcezx.zabbix-repository
 	url = git@github.com:xcezx/ansible-zabbix-repository.git
+[submodule "provisioning/roles/xcezx.zabbix-agent"]
+	path = provisioning/roles/xcezx.zabbix-agent
+	url = git@github.com:xcezx/ansible-zabbix-agent.git
