@@ -1,4 +1,4 @@
 # for xcezx.zabbix-agent
 zabbix_agent_Server: "10.0.0.10"
 zabbix_agent_ServerActive: "10.0.0.10"
-zabbix_agent_Hostname: "10.0.0.10"
+zabbix_agent_Hostname: "10.0.0.101"
