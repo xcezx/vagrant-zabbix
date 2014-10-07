@@ -28,3 +28,7 @@
       zabbix_server_mysql_bindir: "/opt/mysql-5.6.21/bin"
     - { role: xcezx.zabbix-agent, sudo: yes }
     - { role: xcezx.zabbix-web, sudo: yes }
+
+- hosts: agent
+  roles:
+    - { role: xcezx.zabbix-agent, sudo: yes }
