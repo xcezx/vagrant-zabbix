@@ -1,5 +1,0 @@
-zabbix_web_install_packages:
-  - { name: zabbix-web-mysql, enablerepo: zabbix }
-  - { name: zabbix-web, enablerepo: zabbix }
-
-zabbix_web_additional_packages: []

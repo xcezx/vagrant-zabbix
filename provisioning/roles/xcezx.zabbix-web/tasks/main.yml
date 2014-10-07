@@ -1,9 +1,0 @@
-- name: install zabbix-web packages
-  sudo: yes
-  yum:
-    name: "{{ item.name }}"
-    enablerepo: "{{ item.enablerepo }}"
-    state: present
-  with_items:
-    - "{{ zabbix_web_install_packages }}"
-    - "{{ zabbix_web_additional_packages }}"

@@ -13,3 +13,9 @@
 [submodule "provisioning/roles/xcezx.zabbix-agent"]
 	path = provisioning/roles/xcezx.zabbix-agent
 	url = git@github.com:xcezx/ansible-zabbix-agent.git
+[submodule "provisioning/roles/xcezx.zabbix-server"]
+	path = provisioning/roles/xcezx.zabbix-server
+	url = git@github.com:xcezx/ansible-zabbix-server.git
+[submodule "provisioning/roles/xcezx.zabbix-web"]
+	path = provisioning/roles/xcezx.zabbix-web
+	url = git@github.com:xcezx/ansible-zabbix-web.git

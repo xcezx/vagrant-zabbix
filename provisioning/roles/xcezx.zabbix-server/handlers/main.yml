@@ -1,5 +1,0 @@
-- name: restart zabbix-server
-  sudo: yes
-  service:
-    name: zabbix-server
-    state: restarted
