@@ -26,3 +26,4 @@
       zabbix_server_database_login_port: 3306
       zabbix_server_database_login_user: "root"
       zabbix_server_mysql_bindir: "/opt/mysql-5.6.21/bin"
+    - { role: xcezx.zabbix-agent, sudo: yes }

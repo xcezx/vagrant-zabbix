@@ -2,33 +2,33 @@ zabbix_agent_install_packages:
   - zabbix-agent
   - zabbix-sender
 
-zabbix_agent:
-  settings:
-    Alias: ~
-    AllowRoot: 0
-    BufferSend: 5
-    BufferSize: 100
-    DebugLevel: 3
-    EnableRemoteCommands: 0
-    HostMetadata: ~
-    HostMetadataItem: ~
-    Hostname: "Zabbix server"
-    HostnameItem: "system.hostname"
-    Include: "/etc/zabbix/zabbix_agentd.d/"
-    ListenIP: "0.0.0.0"
-    ListenPort: 10050
-    LoadModule: ~
-    LoadModulePath: "${libdir}/modules"
-    LogFile: "/var/log/zabbix/zabbix_agentd.log"
-    LogFileSize: 0
-    LogRemoteCommands: 0
-    MaxLinesPerSecond: 100
-    PidFile: "/var/run/zabbix/zabbix_agentd.pid"
-    RefreshActiveChecks: 120
-    Server: "127.0.0.1"
-    ServerActive: "127.0.0.1"
-    SourceIP: ~
-    StartAgents: 3
-    Timeout: 3
-    UnsafeUserParameters: 0
-    UserParameter: ~
+zabbix_agent_Alias: ~
+zabbix_agent_AllowRoot: "0"
+zabbix_agent_BufferSend: "5"
+zabbix_agent_BufferSize: "100"
+zabbix_agent_DebugLevel: "3"
+zabbix_agent_EnableRemoteCommands: "0"
+zabbix_agent_HostMetadata: ~
+zabbix_agent_HostMetadataItem: ~
+zabbix_agent_Hostname: "Zabbix server"
+zabbix_agent_HostnameItem: "system.hostname"
+zabbix_agent_Include:
+  - "/etc/zabbix/zabbix_agentd.d/"
+zabbix_agent_ListenIP: "0.0.0.0"
+zabbix_agent_ListenPort: "10050"
+zabbix_agent_LoadModule: ~
+zabbix_agent_LoadModulePath: "${libdir}/modules"
+zabbix_agent_LogFile: "/var/log/zabbix/zabbix_agentd.log"
+zabbix_agent_LogFileSize: "0"
+zabbix_agent_LogRemoteCommands: "0"
+zabbix_agent_MaxLinesPerSecond: "100"
+zabbix_agent_PidFile: "/var/run/zabbix/zabbix_agentd.pid"
+zabbix_agent_RefreshActiveChecks: "120"
+zabbix_agent_Server: "127.0.0.1"
+zabbix_agent_ServerActive: "127.0.0.1"
+zabbix_agent_SourceIP: ~
+zabbix_agent_StartAgents: "3"
+zabbix_agent_Timeout: "3"
+zabbix_agent_UnsafeUserParameters: "0"
+zabbix_agent_User: "zabbix"
+zabbix_agent_UserParameter: ~
