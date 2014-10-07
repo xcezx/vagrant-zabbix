@@ -19,3 +19,6 @@
 [submodule "provisioning/roles/xcezx.zabbix-web"]
 	path = provisioning/roles/xcezx.zabbix-web
 	url = git@github.com:xcezx/ansible-zabbix-web.git
+[submodule "provisioning/roles/xcezx.supervisor"]
+	path = provisioning/roles/xcezx.supervisor
+	url = git@github.com:xcezx/ansible-supervisor.git
