@@ -1,0 +1,3 @@
+[submodule "provisioning/roles/xcezx.mysql"]
+	path = provisioning/roles/xcezx.mysql
+	url = git@github.com:xcezx/ansible-mysql.git
