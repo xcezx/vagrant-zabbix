@@ -13,3 +13,16 @@
     - name: install MySQL-python
       sudo: yes
       yum: { name: MySQL-python, state: present }
+
+- hosts: server
+  roles:
+    - { role: xcezx.zabbix-repository, sudo: yes }
+    - role: xcezx.zabbix-server
+      sudo: yes
+      # @FIXME
+      zabbix_server_database_host: "10.0.0.0/255.255.0.0"
+      zabbix_server_database_login_host: "127.0.0.1"
+      zabbix_server_database_login_password: "{{ mysql_root_password }}"
+      zabbix_server_database_login_port: 3306
+      zabbix_server_database_login_user: "root"
+      zabbix_server_mysql_bindir: "/opt/mysql-5.6.21/bin"
