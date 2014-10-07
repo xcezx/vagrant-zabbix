@@ -4,3 +4,6 @@
 [submodule "provisioning/roles/xcezx.httpd"]
 	path = provisioning/roles/xcezx.httpd
 	url = git@github.com:xcezx/ansible-httpd.git
+[submodule "provisioning/roles/xcezx.php"]
+	path = provisioning/roles/xcezx.php
+	url = git@github.com:xcezx/ansible-php.git

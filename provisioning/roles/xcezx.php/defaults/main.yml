@@ -1,7 +1,0 @@
-php_install_packages:
-  - { name: php-common, enablerepo: ~ }
-  - { name: php-cli, enablerepo: ~ }
-
-php_additional_install_packages: []
-
-php_config: []
