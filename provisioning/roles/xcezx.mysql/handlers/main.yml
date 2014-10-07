@@ -1,5 +1,0 @@
-- name: restart mysqld
-  sudo: yes
-  service:
-    name: "{{ mysql_rc_script }}"
-    state: restarted
