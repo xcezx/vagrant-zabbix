@@ -2,6 +2,14 @@
   roles:
     - { role: goozbach.EPEL, sudo: yes }
 
+  tasks:
+    - name: stop iptables
+      sudo: yes
+      service:
+        name: iptables
+        state: stopped
+        enabled: no
+
 - hosts: server
   roles:
     - { role: xcezx.httpd, sudo: yes }
