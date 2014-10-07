@@ -7,3 +7,6 @@
 [submodule "provisioning/roles/xcezx.php"]
 	path = provisioning/roles/xcezx.php
 	url = git@github.com:xcezx/ansible-php.git
+[submodule "provisioning/roles/xcezx.zabbix-repository"]
+	path = provisioning/roles/xcezx.zabbix-repository
+	url = git@github.com:xcezx/ansible-zabbix-repository.git
