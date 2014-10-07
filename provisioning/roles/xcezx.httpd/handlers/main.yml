@@ -1,3 +1,0 @@
-- name: httpd graceful
-  sudo: yes
-  command: service httpd graceful
