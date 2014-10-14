@@ -39,3 +39,8 @@ zabbix_server_DBPort: "3306"
 zabbix_agent_Server: "10.0.0.10"
 zabbix_agent_ServerActive: "10.0.0.10"
 zabbix_agent_Hostname: "10.0.0.10"
+zabbix_agent_ListenIP: "10.0.0.10"
+
+# for xcezx.zabbix-web
+zabbix_web_additional_packages:
+  - { name: zabbix-web-japanese, enablerepo: zabbix }
